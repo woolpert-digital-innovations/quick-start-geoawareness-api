@@ -14,7 +14,7 @@
       "eventTimestamp": "2020-04-25T18:00:30Z",
       "storeName": "Carmelit"
     },
-    "currentGeofence": {
+    "latestGeofence": {
       "rangeType": "time",
       "range": 600,
       "intersectsEvent": true
@@ -52,7 +52,7 @@
       "eventTimestamp": "2020-04-25T18:01:30Z",
       "storeName": "Carmelit"
     },
-    "currentGeofence": {},
+    "latestGeofence": {},
     "geofences": [
       {
         "rangeType": "time",
@@ -87,7 +87,7 @@
       "eventTimestamp": "2020-04-25T18:02:30Z",
       "storeName": "Carmelit"
     },
-    "currentGeofence": {
+    "latestGeofence": {
       "rangeType": "time",
       "range": 120,
       "intersectsEvent": true
