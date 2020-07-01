@@ -14,7 +14,7 @@
             "eventTimestamp": "{{$randomDateRecent}}",
             "storeName": "Napoli"
         },
-        "latestGeofence": {
+        "innerGeofence": {
             "rangeType": "time",
             "range": {{$randomInt}},
             "intersectsEvent": true
@@ -51,7 +51,7 @@
             "eventTimestamp": "{{$randomDateRecent}}",
             "storeName": "Napoli"
         },
-        "latestGeofence": {
+        "innerGeofence": {
             "rangeType": "time",
             "range": {{$randomInt}},
             "intersectsEvent": true
@@ -88,7 +88,7 @@
             "eventTimestamp": "{{$randomDateRecent}}",
             "storeName": "Napoli"
         },
-        "latestGeofence": {
+        "innerGeofence": {
             "rangeType": "time",
             "range": {{$randomInt}},
             "intersectsEvent": true
@@ -125,7 +125,7 @@
             "eventTimestamp": "{{$randomDateRecent}}",
             "storeName": "Napoli"
         },
-        "latestGeofence": {
+        "innerGeofence": {
             "rangeType": "time",
             "range": {{$randomInt}},
             "intersectsEvent": true
@@ -162,7 +162,7 @@
             "eventTimestamp": "{{$randomDateRecent}}",
             "storeName": "Napoli"
         },
-        "latestGeofence": {
+        "innerGeofence": {
             "rangeType": "time",
             "range": {{$randomInt}},
             "intersectsEvent": true
@@ -199,7 +199,7 @@
             "eventTimestamp": "{{$randomDateRecent}}",
             "storeName": "Napoli"
         },
-        "latestGeofence": {
+        "innerGeofence": {
             "rangeType": "time",
             "range": {{$randomInt}},
             "intersectsEvent": true
@@ -236,7 +236,7 @@
             "eventTimestamp": "{{$randomDateRecent}}",
             "storeName": "Napoli"
         },
-        "latestGeofence": {
+        "innerGeofence": {
             "rangeType": "time",
             "range": {{$randomInt}},
             "intersectsEvent": true
@@ -273,7 +273,7 @@
             "eventTimestamp": "{{$randomDateRecent}}",
             "storeName": "Napoli"
         },
-        "latestGeofence": {
+        "innerGeofence": {
             "rangeType": "time",
             "range": {{$randomInt}},
             "intersectsEvent": true
@@ -310,7 +310,7 @@
             "eventTimestamp": "{{$randomDateRecent}}",
             "storeName": "Napoli"
         },
-        "latestGeofence": {
+        "innerGeofence": {
             "rangeType": "time",
             "range": {{$randomInt}},
             "intersectsEvent": true
@@ -347,7 +347,7 @@
             "eventTimestamp": "{{$randomDateRecent}}",
             "storeName": "Napoli"
         },
-        "latestGeofence": {
+        "innerGeofence": {
             "rangeType": "time",
             "range": {{$randomInt}},
             "intersectsEvent": true
@@ -384,7 +384,7 @@
             "eventTimestamp": "{{$randomDateRecent}}",
             "storeName": "Napoli"
         },
-        "latestGeofence": {
+        "innerGeofence": {
             "rangeType": "time",
             "range": {{$randomInt}},
             "intersectsEvent": true
@@ -421,7 +421,7 @@
             "eventTimestamp": "{{$randomDateRecent}}",
             "storeName": "Napoli"
         },
-        "latestGeofence": {
+        "innerGeofence": {
             "rangeType": "time",
             "range": {{$randomInt}},
             "intersectsEvent": true
@@ -458,7 +458,7 @@
             "eventTimestamp": "{{$randomDateRecent}}",
             "storeName": "Napoli"
         },
-        "latestGeofence": {
+        "innerGeofence": {
             "rangeType": "time",
             "range": {{$randomInt}},
             "intersectsEvent": true
@@ -495,7 +495,7 @@
             "eventTimestamp": "{{$randomDateRecent}}",
             "storeName": "Napoli"
         },
-        "latestGeofence": {
+        "innerGeofence": {
             "rangeType": "time",
             "range": {{$randomInt}},
             "intersectsEvent": true
@@ -532,7 +532,7 @@
             "eventTimestamp": "{{$randomDateRecent}}",
             "storeName": "Napoli"
         },
-        "latestGeofence": {
+        "innerGeofence": {
             "rangeType": "time",
             "range": {{$randomInt}},
             "intersectsEvent": true
@@ -569,7 +569,7 @@
             "eventTimestamp": "{{$randomDateRecent}}",
             "storeName": "Napoli"
         },
-        "latestGeofence": {
+        "innerGeofence": {
             "rangeType": "time",
             "range": {{$randomInt}},
             "intersectsEvent": true
@@ -606,7 +606,7 @@
             "eventTimestamp": "{{$randomDateRecent}}",
             "storeName": "Napoli"
         },
-        "latestGeofence": {
+        "innerGeofence": {
             "rangeType": "time",
             "range": {{$randomInt}},
             "intersectsEvent": true
@@ -643,7 +643,7 @@
             "eventTimestamp": "{{$randomDateRecent}}",
             "storeName": "Napoli"
         },
-        "latestGeofence": {
+        "innerGeofence": {
             "rangeType": "time",
             "range": {{$randomInt}},
             "intersectsEvent": true
@@ -680,7 +680,7 @@
             "eventTimestamp": "{{$randomDateRecent}}",
             "storeName": "Napoli"
         },
-        "latestGeofence": {
+        "innerGeofence": {
             "rangeType": "time",
             "range": {{$randomInt}},
             "intersectsEvent": true
@@ -717,7 +717,7 @@
             "eventTimestamp": "{{$randomDateRecent}}",
             "storeName": "Napoli"
         },
-        "latestGeofence": {
+        "innerGeofence": {
             "rangeType": "time",
             "range": {{$randomInt}},
             "intersectsEvent": true
@@ -754,7 +754,7 @@
             "eventTimestamp": "{{$randomDateRecent}}",
             "storeName": "Napoli"
         },
-        "latestGeofence": {
+        "innerGeofence": {
             "rangeType": "time",
             "range": {{$randomInt}},
             "intersectsEvent": true
@@ -791,7 +791,7 @@
             "eventTimestamp": "{{$randomDateRecent}}",
             "storeName": "Napoli"
         },
-        "latestGeofence": {
+        "innerGeofence": {
             "rangeType": "time",
             "range": {{$randomInt}},
             "intersectsEvent": true
@@ -828,7 +828,7 @@
             "eventTimestamp": "{{$randomDateRecent}}",
             "storeName": "Napoli"
         },
-        "latestGeofence": {
+        "innerGeofence": {
             "rangeType": "time",
             "range": {{$randomInt}},
             "intersectsEvent": true
@@ -865,7 +865,7 @@
             "eventTimestamp": "{{$randomDateRecent}}",
             "storeName": "Napoli"
         },
-        "latestGeofence": {
+        "innerGeofence": {
             "rangeType": "time",
             "range": {{$randomInt}},
             "intersectsEvent": true
@@ -902,7 +902,7 @@
             "eventTimestamp": "{{$randomDateRecent}}",
             "storeName": "Napoli"
         },
-        "latestGeofence": {
+        "innerGeofence": {
             "rangeType": "time",
             "range": {{$randomInt}},
             "intersectsEvent": true
@@ -939,7 +939,7 @@
             "eventTimestamp": "{{$randomDateRecent}}",
             "storeName": "Napoli"
         },
-        "latestGeofence": {
+        "innerGeofence": {
             "rangeType": "time",
             "range": {{$randomInt}},
             "intersectsEvent": true
@@ -976,7 +976,7 @@
             "eventTimestamp": "{{$randomDateRecent}}",
             "storeName": "Napoli"
         },
-        "latestGeofence": {
+        "innerGeofence": {
             "rangeType": "time",
             "range": {{$randomInt}},
             "intersectsEvent": true
@@ -1013,7 +1013,7 @@
             "eventTimestamp": "{{$randomDateRecent}}",
             "storeName": "Napoli"
         },
-        "latestGeofence": {
+        "innerGeofence": {
             "rangeType": "time",
             "range": {{$randomInt}},
             "intersectsEvent": true

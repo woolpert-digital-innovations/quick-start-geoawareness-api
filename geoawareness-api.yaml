@@ -1555,7 +1555,7 @@ paths:
                   "eventTimestamp": "2020-04-25T18:00:30Z",
                   "storeName": "Carmelit"
                 },
-                "latestGeofence": {
+                "innerGeofence": {
                   "rangeType": "time",
                   "range": 600,
                   "intersectsEvent": true
@@ -1593,7 +1593,7 @@ paths:
                   "eventTimestamp": "2020-04-25T18:01:30Z",
                   "storeName": "Carmelit"
                 },
-                "latestGeofence": {},
+                "innerGeofence": {},
                 "geofences": [
                   {
                     "rangeType": "time",
@@ -1628,7 +1628,7 @@ paths:
                   "eventTimestamp": "2020-04-25T18:02:30Z",
                   "storeName": "Carmelit"
                 },
-                "latestGeofence": {
+                "innerGeofence": {
                   "rangeType": "time",
                   "range": 120,
                   "intersectsEvent": true
@@ -1786,7 +1786,7 @@ definitions:
           type: string
       latestEvent:
         $ref: '#/definitions/Event'
-      latestGeofence:
+      innerGeofence:
         $ref: '#/definitions/Geofence'
       geofences:
         type: array
