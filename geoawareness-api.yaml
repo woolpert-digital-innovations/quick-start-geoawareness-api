@@ -1,12 +1,15 @@
 swagger: '2.0'
 info:
   version: '1.0.0'
-  title: geoawareness
+  title: Geoawareness API
   description: Monitor order pickup arrivals with geofencing.
-host: 'geoawareness.woolpert.dev'
-basePath: /geoawareness
+host: 'geoawareness-api-bkejaovq4a-uw.a.run.app'
+basePath: /
 schemes:
-  - http
+  - https
+x-google-backend:
+  address: https://geoawareness-backend-bkejaovq4a-uw.a.run.app
+  protocol: h2
 consumes:
   - application/json
 produces:
@@ -1540,21 +1543,18 @@ paths:
               $ref: '#/definitions/Order'
           examples:
             application/json: [
-              {
-                "orderId": "13579",
-                "storeName": "Carmelit",
-                "status": [
-                  "open"
-                ],
-                "latestEvent": {
-                  "orderId": "13579",
-                  "eventLocation": {
-                    "latitude": 36.620942,
-                    "longitude": -93.219398
-                  },
-                  "eventTimestamp": "2020-04-25T18:00:30Z",
-                  "storeName": "Carmelit"
+            {
+              "orderId": "13579",
+              "storeName": "Carmelit",
+              "status": [
+                "open"
+              ],
+              "latestEvent": {
+                "eventLocation": {
+                  "latitude": 36.620942,
+                  "longitude": -93.219398
                 },
+                "eventTimestamp": "2020-04-25T18:00:30Z",
                 "innerGeofence": {
                   "rangeType": "time",
                   "range": 600,
@@ -1577,22 +1577,20 @@ paths:
                     "intersectsEvent": true
                   }
                 ]
-              },
-              {
-                "orderId": "24680",
-                "storeName": "Carmelit",
-                "status": [
-                  "open"
-                ],
-                "latestEvent": {
-                  "orderId": "24680",
-                  "eventLocation": {
-                    "latitude": 36.615895,
-                    "longitude": -93.276435
-                  },
-                  "eventTimestamp": "2020-04-25T18:01:30Z",
-                  "storeName": "Carmelit"
+              }
+            },
+            {
+              "orderId": "24680",
+              "storeName": "Carmelit",
+              "status": [
+                "open"
+              ],
+              "latestEvent": {
+                "eventLocation": {
+                  "latitude": 36.615895,
+                  "longitude": -93.276435
                 },
+                "eventTimestamp": "2020-04-25T18:01:30Z",
                 "innerGeofence": {},
                 "geofences": [
                   {
@@ -1611,23 +1609,21 @@ paths:
                     "intersectsEvent": false
                   }
                 ]
-              },
-              {
-                "orderId": "62810",
-                "storeName": "Carmelit",
-                "status": [
-                  "closed"
-                ],
-                "latestEvent": {
-                  "orderId": "24680",
-                  "eventLocation": {
-                    "latitude": 36.650718,
-                    "longitude": -93.220023
-                  }
-                  ,
-                  "eventTimestamp": "2020-04-25T18:02:30Z",
-                  "storeName": "Carmelit"
-                },
+              }
+            },
+            {
+              "orderId": "62810",
+              "storeName": "Carmelit",
+              "status": [
+                "closed"
+              ],
+              "latestEvent": {
+                "eventLocation": {
+                  "latitude": 36.650718,
+                  "longitude": -93.220023
+                }
+                ,
+                "eventTimestamp": "2020-04-25T18:02:30Z",
                 "innerGeofence": {
                   "rangeType": "time",
                   "range": 120,
@@ -1651,7 +1647,8 @@ paths:
                   }
                 ]
               }
-            ]
+            }
+          ]
   /orders/{orderId}:
     put:
       description: Update order.
