@@ -90,7 +90,7 @@ app.post('/events', async (req, res, next) => {
         const evt = req.body;
         console.log('event: ', evt);
         ingestPublisher.publishMessage(evt);
-        res.status(204).send();
+        res.status(201).send();
     } catch (error) {
         console.error(error);
         next(error);
