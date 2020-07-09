@@ -3,12 +3,12 @@ info:
   version: '1.0.0'
   title: Geoawareness API
   description: Monitor order pickup arrivals with geofencing.
-host: 'api.geoawareness.woolpert.dev'
+host: ${HOSTNAME}
 basePath: /
 schemes:
   - https
 x-google-backend:
-  address: https://geoawareness-backend-bkejaovq4a-uw.a.run.app
+  address: ${BACKEND_SERVICES_ADDRESS}
   protocol: h2
 consumes:
   - application/json
