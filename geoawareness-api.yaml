@@ -1657,7 +1657,7 @@ paths:
             }
           ]
   /orders/{orderId}:
-    put:
+    patch:
       description: Update order.
       operationId: updateOrder
       produces:

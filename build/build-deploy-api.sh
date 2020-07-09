@@ -7,7 +7,7 @@ PROJECT_ID=$(gcloud config get-value project)
 HOSTNAME=$1
 
 # substitute service definition file variables
-echo "Substituting variables into service definition file."
+echo "\nSubstituting variables into service definition file."
 BACKEND_SERVICES_ADDRESS=$(gcloud run services list --platform managed --filter=geoawareness-backend --format="value(URL)")
 sed \
     -e "s|\${BACKEND_SERVICES_ADDRESS}|"$BACKEND_SERVICES_ADDRESS"|" \
@@ -15,13 +15,13 @@ sed \
     geoawareness-api.yaml > geoawareness-api-touched.yaml
 
 # enable Cloud Endpoints
-echo "Deploying API definition to Cloud Endpoints"
+echo "\nDeploying API definition to Cloud Endpoints"
 gcloud services enable endpoints.googleapis.com
 gcloud endpoints services deploy geoawareness-api-touched.yaml
 gcloud services enable $HOSTNAME
 
 # build and deploy new image with Cloud Endpoints ESPv2
-echo "Deploying new API for service $HOSTNAME for endpoints config $CONFIG_ID"
+echo "\nDeploying new API image for service $HOSTNAME, Endpoints config $CONFIG_ID to Cloud Run"
 CONFIG_ID=$(gcloud endpoints configs list --service $HOSTNAME --sort-by ~id --limit 1 --format="value(id)")
 
 ./build/gcloud_build_image -s $HOSTNAME -c $CONFIG_ID -p $PROJECT_ID
