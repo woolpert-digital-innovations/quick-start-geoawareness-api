@@ -6,26 +6,29 @@ app.use(bodyParser.json());
 const repository = require('./src/repository');
 const ingestPublisher = require('./src/publisher');
 
+const { ErrorReporting } = require('@google-cloud/error-reporting');
+const errors = new ErrorReporting({ reportMode: 'always' });
+const wrap = fn => (...args) => fn(...args).catch(args[2]);
+
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
     console.log('REST API listening on port ', port);
 });
 
-app.get('/', async (req, res) => {
+app.get('/', wrap(async (req, res) => {
     res.send('Welcome to GeoAwareness REST API');
-});
+}));
 
-app.get('/stores', async (req, res) => {
+app.get('/stores', wrap(async (req, res) => {
     try {
         const stores = await repository.getStores();
         res.json(stores);
     } catch (error) {
-        console.error(error);
         next(error);
     }
-});
+}));
 
-app.get('/geofences', async (req, res) => {
+app.get('/geofences', wrap(async (req, res) => {
     try {
         const storeName = req.query.storeName;
         if (!storeName) {
@@ -34,12 +37,11 @@ app.get('/geofences', async (req, res) => {
         const geofences = await repository.getGeofencesByStore(storeName);
         res.json(geofences);
     } catch (error) {
-        console.error(error);
         next(error);
     }
-});
+}));
 
-app.get('/orders', async (req, res, next) => {
+app.get('/orders', wrap(async (req, res, next) => {
     try {
         const storeName = req.query.storeName;
         if (!storeName) {
@@ -48,12 +50,11 @@ app.get('/orders', async (req, res, next) => {
         const orders = await repository.getOrdersByStore(storeName);
         res.json(orders);
     } catch (error) {
-        console.error(error);
         next(error);
     }
-});
+}));
 
-app.patch('/orders/:orderId', async (req, res, next) => {
+app.patch('/orders/:orderId', wrap(async (req, res, next) => {
     try {
         const orderId = req.params.orderId;
         if (!orderId) {
@@ -80,19 +81,28 @@ app.patch('/orders/:orderId', async (req, res, next) => {
 
         res.status(204).send();
     } catch (error) {
-        console.error(error);
         next(error);
     }
-});
+}));
 
-app.post('/events', async (req, res, next) => {
+app.post('/events', wrap(async (req, res, next) => {
     try {
         const evt = req.body;
         console.log('event: ', evt);
         ingestPublisher.publishMessage(evt);
         res.status(201).send();
     } catch (error) {
-        console.error(error);
         next(error);
     }
-});
+}));
+
+function errorHandler(err, req, res, next) {
+    errors.report(err);
+    if (res.headersSent) {
+        return next(err)
+    }
+    res.status(500);
+    res.json({ error: err });
+}
+app.use(errorHandler);
+app.use(errors.express);
