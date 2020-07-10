@@ -1541,6 +1541,10 @@ paths:
           name: storeName
           type: string
           required: true
+        - in: query
+          name: status
+          type: string
+          required: false
       responses:
         '200':
           description: OK

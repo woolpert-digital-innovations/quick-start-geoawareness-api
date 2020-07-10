@@ -47,7 +47,8 @@ app.get('/orders', wrap(async (req, res, next) => {
         if (!storeName) {
             throw ('Store name is required.');
         }
-        const orders = await repository.getOrdersByStore(storeName);
+        const status = req.query.status;
+        const orders = await repository.getOrdersByStore(storeName, status);
         res.json(orders);
     } catch (error) {
         next(error);
