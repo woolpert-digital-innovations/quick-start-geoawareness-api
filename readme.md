@@ -26,6 +26,12 @@ The instructions [here](https://cloud.google.com/endpoints/docs/openapi/get-star
 sh build/build-deploy-api.sh <hostname> # Example: api.geoawareness.woolpert.dev
 ```
 
-#### Map Custom Domain
+#### Map Custom Domain (Optional)
 
 See these [instructions](https://cloud.google.com/run/docs/mapping-custom-domains#command-line) to map a custom domain to the 'host' value in the service definition file.
+
+```
+gcloud beta run domain-mappings create --service geoawareness-api --domain <hostname> --platform managed # Example: api.geoawareness.woolpert.dev
+```
+
+Add [DNS records](https://cloud.google.com/run/docs/mapping-custom-domains#dns_update) at your domain registrar.
