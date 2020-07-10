@@ -12,7 +12,9 @@ gcloud services enable servicecontrol.googleapis.com
 ```
 
 ```
-gcloud builds submit --tag gcr.io/$PROJECT_ID/geoawareness-backend --project $PROJECT_ID
+gcloud config set project <PROJECT_ID>
+PROJECT_ID=$(gcloud config get-value project)
+gcloud builds submit --tag gcr.io/$PROJECT_ID/geoawareness-backend
 gcloud run deploy geoawareness-backend --image gcr.io/$PROJECT_ID/geoawareness-backend --no-allow-unauthenticated --platform managed
 ```
 
