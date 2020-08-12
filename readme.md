@@ -1,10 +1,10 @@
-# Geoawareness REST API
+# GeoAwareness REST API
 
-The REST API provides access to the Geoawareness data model and telemetry event ingest services.
+The REST API provides access to the GeoAwareness data model and telemetry event ingest services.
 
 ## Backend Services
 
-### Deploying
+### Deploy to GCP
 
 ```
 gcloud services enable servicemanagement.googleapis.com
@@ -12,15 +12,13 @@ gcloud services enable servicecontrol.googleapis.com
 ```
 
 ```
-gcloud config set project <PROJECT_ID>
-PROJECT_ID=$(gcloud config get-value project)
 gcloud builds submit --tag gcr.io/$PROJECT_ID/geoawareness-backend
 gcloud run deploy geoawareness-backend --image gcr.io/$PROJECT_ID/geoawareness-backend --no-allow-unauthenticated --platform managed
 ```
 
 ## API
 
-### Deploying
+### Deploy to GCP
 
 The instructions [here](https://cloud.google.com/endpoints/docs/openapi/get-started-cloud-run#configure_es) to deploy the ESP to Cloud Run have been compiled into a build script. Everytime you modify and redeploy the Endpoints service configuration, you must re-run this entire step. Otherwise, changes to the service configuration will not be propagated to ESPv2 Beta.
 
