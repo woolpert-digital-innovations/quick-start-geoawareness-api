@@ -2,9 +2,21 @@
 
 The REST API provides access to the GeoAwareness data model and telemetry event ingest services.
 
-## Backend Services
+## Run Locally
 
-### Deploy to GCP
+Running the API locally is useful for testing and debugging. Download the service account credentials created when standing up the [geoawareness-geofencing](../geoawareness-geofencing) service.
+
+```
+export GOOGLE_APPLICATION_CREDENTIALS=geoawareness-service-account-credentials.json
+
+nvm use
+npm install
+npm start
+```
+
+## Deploy to GCP
+
+### Backend Services
 
 ```
 gcloud services enable servicemanagement.googleapis.com
@@ -16,9 +28,13 @@ gcloud builds submit --tag gcr.io/$PROJECT_ID/geoawareness-backend
 gcloud run deploy geoawareness-backend --image gcr.io/$PROJECT_ID/geoawareness-backend --no-allow-unauthenticated --platform managed
 ```
 
-## API
+### API
 
-### Deploy to GCP
+#### Authentication
+
+[API key authentication](https://cloud.google.com/endpoints/docs/openapi/authentication-method#api_keys) is configured for Cloud Endpoints as specified in [geoawareness-api.yaml](./geoawareness-api.yaml). This is a simple encrypted string and admittedly subject to man-in-the-middle-attacks. For a production deployment, we recommend implementing additional [authentication scheme(s)](https://cloud.google.com/endpoints/docs/openapi/authentication-method) that align with your existing client application authentication patterns. API key authentication alone is not enough if the API calls contain user data.
+
+#### Deploy
 
 The instructions [here](https://cloud.google.com/endpoints/docs/openapi/get-started-cloud-run#configure_es) to deploy the ESP to Cloud Run have been compiled into a build script. Everytime you modify and redeploy the Endpoints service configuration, you must re-run this entire step. Otherwise, changes to the service configuration will not be propagated to ESPv2 Beta.
 
