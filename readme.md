@@ -14,6 +14,8 @@ npm install
 npm start
 ```
 
+The API is available at [http://locahost:8080](http://localhost:8080).
+
 ## Deploy to GCP
 
 ### Backend Services
