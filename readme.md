@@ -4,7 +4,7 @@ The REST API provides access to the GeoAwareness data model and telemetry event 
 
 ## Run Locally
 
-Running the API locally is useful for testing and debugging. Download the service account credentials created when standing up the [geoawareness-geofencing](../geoawareness-geofencing) service.
+Running the API locally is useful for testing and debugging. Download the service account credentials created when standing up the [geoawareness-geofencing](../geoawareness-geofencing/readme.md) service.
 
 ```
 export GOOGLE_APPLICATION_CREDENTIALS=geoawareness-service-account-credentials.json
@@ -32,7 +32,7 @@ gcloud run deploy geoawareness-backend --image gcr.io/$PROJECT_ID/geoawareness-b
 
 #### Authentication
 
-[API key authentication](https://cloud.google.com/endpoints/docs/openapi/authentication-method#api_keys) is configured for Cloud Endpoints as specified in [geoawareness-api.yaml](./geoawareness-api.yaml). This is a simple encrypted string and admittedly subject to man-in-the-middle-attacks. For a production deployment, we recommend implementing additional [authentication scheme(s)](https://cloud.google.com/endpoints/docs/openapi/authentication-method) that align with your existing client application authentication patterns. API key authentication alone is not enough if the API calls contain user data.
+[API key authentication](https://cloud.google.com/endpoints/docs/openapi/authentication-method#api_keys) is configured for Cloud Endpoints as specified in [geoawareness-api.yaml](./geoawareness-api.yaml#L17). This is a simple encrypted string and admittedly subject to man-in-the-middle-attacks. For a production deployment, we recommend implementing additional [authentication scheme(s)](https://cloud.google.com/endpoints/docs/openapi/authentication-method) that align with your existing client application authentication patterns. API key authentication alone is not enough if the API calls contain user data.
 
 #### Deploy
 
